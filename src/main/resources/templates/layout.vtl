@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hair Salon</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Creepster|Fredericka+the+Great|Frijole|Just+Me+Again+Down+Here|Sedgwick+Ave+Display|Vast+Shadow" rel="stylesheet">
-    <link rel='stylesheet' href='/app.css'>
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>M-Unit Hair Salon Manager</h1>
-        <div class="row">
-          <div class="col-md-3" id="menu">
-               <br> <br>
-              <a href="/"><button type="button" class="btn btn-primary btn-block">HOME</button></a><br>
-              <hr>
-              <a href="/stylists"><button type="button" class="btn btn-success btn-block">STYLISTS</button></a><br>
-              <hr>
-              <a href="/clients"><button type="button" class="btn btn-info btn-block">CLIENTS</button></a><br>
-              <hr>
-              <a href="/about"><button type="button" class="btn btn-warning btn-block">ABOUT US</button></a><br>
-              <hr>
+<head>
+  <title>MJENGO HUB</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Creepster|Fredericka+the+Great|Frijole|Just+Me+Again+Down+Here|Sedgwick+Ave+Display|Vast+Shadow" rel="stylesheet">
+  <link rel='stylesheet' href='/app.css'>
 
-          </div>
-          <div class="col-md-9" id="main">
-           #parse( $template )
-          </div>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Mjengo Hub</h1>
+      <div class="row">
+        <div class="col-md-3" id="menu">
+          <br> <br>
+          <a href="/"><button type="button" class="btn btn-primary btn-block">HOME</button></a><br>
+          <hr>
+          <a href="/stylists"><button type="button" class="btn btn-success btn-block">SELLERS</button></a><br>
+          <hr>
+          <a href="/clients"><button type="button" class="btn btn-info btn-block">ITEMS</button></a><br>
+          <hr>
+          <a href="/about"><button type="button" class="btn btn-warning btn-block">ABOUT US</button></a><br>
+          <hr>
+
+        </div>
+        <div class="col-md-9" id="main">
+          #parse( $template )
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

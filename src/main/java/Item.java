@@ -30,7 +30,7 @@ public class Item{
     return cost;
   }
 
-  public Stylist getSeller() {
+  public Seller getSeller() {
     int id = sellerid;
     Seller seller;
     try(Connection con = DB.sql2o.open()) {

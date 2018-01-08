@@ -52,10 +52,10 @@ public class Seller{
   public static Seller find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM sellers where id=:id";
-      Stylist stylist = con.createQuery(sql)
+      Seller seller = con.createQuery(sql)
         .addParameter("id", id)
         .executeAndFetchFirst(Seller.class);
-      return Seller;
+      return seller;
     }
   }
   public void update(String name, String gender, String contact) {
@@ -81,7 +81,7 @@ public class Seller{
       con.createQuery(sql).addParameter("id", id).executeUpdate();
     }
   }
-  public List<Items> getItems() {
+  public List<Item> getItems() {
       try(Connection con = DB.sql2o.open()) {
         String sql = "SELECT * FROM items where sellerid=:id ORDER BY name";
         return con.createQuery(sql)
