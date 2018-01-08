@@ -1,0 +1,57 @@
+
+*{
+  color: white;
+}
+h1{
+  color: red;
+  /*font-family: 'Bungee Inline', cursive;*/
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+.navbar{
+border-radius: 0px;
+}
+.jumbotron{
+  height: 600px;
+  //text-align: center;
+  margin-top: 10px;
+  border-radius: 50px;
+  background-image: url("/images/bb.jpg");
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-size: 100% auto;
+  padding-top: 1px;
+}
+.jumbotron h1{
+  margin-top: 0px;
+  padding-top: 5px;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+}
+#main{
+    border-style: solid;
+    border-color: gray;
+}
+.transparent {
+  /*padding:20px;
+   width:710px;*/
+   position:relative;
+   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+   background: rgba(204, 204, 204, 0.5);
+}
+hr{
+  margin: 0px;
+}
+#menu{
+  /*font-family: 'Creepster', cursive;*/
+  /*font-family: 'Just Me Again Down Here', cursive;*/
+  /*font-family: 'Frijole', cursive;*/
+  font-family: 'Vast Shadow', cursive;
+}
+p{
+  font-family: 'Just Me Again Down Here', cursive;
+  /*font-size: 250%;*/
+  font-size: x-large;
+}

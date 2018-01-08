@@ -1,0 +1,55 @@
+<h2>$stylist.getName() Clients:</h2>
+#if($stylist.getClients().size()>0)
+  <div class ="row" >
+   <div class="col-md-2">
+    ID
+   </div>
+   <div class="col-md-4">
+    NAME
+   </div>
+   <div class="col-md-2">
+      GENDER
+   </div>
+   <div class="col-md-2">
+      CONTACT
+   </div>
+   <div class="col-md-2">
+      ACTION
+   </div>
+  </div>
+  <hr>
+  <ol>
+      #foreach($client in $stylist.getClients())
+       <div class ="row" >
+        <div class="col-md-2">
+          <li></li>
+        </div>
+        <div class="col-md-4">
+          $client.getName()
+        </div>
+        <div class="col-md-2">
+          $client.getGender()
+        </div>
+        <div class="col-md-2">
+          $client.getContact()
+        </div>
+        <div class="col-md-2">
+            <div class="col-md-2">
+               <a href="/clients/$client.getId()/edit"><img src="/images/e2.png" alt="Edit"></a>
+            </div>
+            <div class="col-md-2">
+               <form action="/clients/$client.getId()/delete" method="post">
+                <input type="image" src="/images/delete.png" alt="Delete">
+               </form>
+            </div>
+        </div>
+       </div>
+       <hr>
+      #end
+  </ol>
+  #else
+    <h3>NO CLIENTS ASSIGNED TO THIS STYLIST</h3>
+  #end
+
+<br>
+<a href="/stylists/$stylist.getId()/clients/new"><button type="button" class="btn btn-success">New Client</button></a>
