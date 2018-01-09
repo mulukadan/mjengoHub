@@ -1,0 +1,91 @@
+
+  <div class="container">
+    <h2>Hello, $seller.getName() !!</h2>
+    <h1 class="blue">Welcome to your profile Page</h1>
+    <div class="Sellerdetails">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>User ID: $seller.getId()</p>
+          <p>User Name: $seller.getName()</p>
+        </div>
+        <div class="col-sm-6">
+          <p>Email address: $seller.getEmail()</p>
+          <p>Phone No: $seller.getPhone()</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <button type="button" name="button">Edit</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-danger">Delete Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Items posted by the seller -->
+    <div class="row">
+      <div class="col-sm-9">
+        <h3>Items You Have Posted so far!</h3>
+      </div>
+      <div class="col-sm-3">
+        <button type="button" class="btn btn-success">Add New</button>
+      </div>
+    </div>
+
+
+    <div class="SellerItems">
+      #if($seller.getItems().size()>0)
+        <div class ="row" >
+         <div class="col-md-2">
+            ID
+         </div>
+         <div class="col-md-4">
+            NAME
+         </div>
+         <div class="col-md-2">
+            LOCATION
+         </div>
+         <div class="col-md-2">
+            COST
+         </div>
+         <div class="col-md-2">
+            ACTION
+         </div>
+        </div>
+        <hr>
+        <ol>
+            #foreach($item in $seller.getItems())
+             <div class ="row" >
+              <div class="col-md-2">
+                <li></li>
+              </div>
+              <div class="col-md-4">
+                $item.getName()
+              </div>
+              <div class="col-md-2">
+                $item.getLocation()
+              </div>
+              <div class="col-md-2">
+                $item.getCost()
+              </div>
+              <div class="col-md-2">
+                  <div class="col-md-2">
+                     <a href="/clients/$client.getId()/edit"><img src="/images/e2.png" alt="Edit"></a>
+                  </div>
+                  <div class="col-md-2">
+                     <form action="/clients/$client.getId()/delete" method="post">
+                      <input type="image" src="/images/delete.png" alt="Delete">
+                     </form>
+                  </div>
+              </div>
+             </div>
+             <hr>
+            #end
+        </ol>
+        #else
+          <h3>NO ITEMS POSTED!!</h3>
+        #end
+
+      <br>
+    </div>
+</div>

@@ -90,4 +90,16 @@ public class Seller{
       }
     }
 
+    //login Seller
+    public static Seller login(String name, String password) {
+      try(Connection con = DB.sql2o.open()) {
+        String sql = "SELECT * FROM sellers where name=:name and password=:password";
+        Seller seller = con.createQuery(sql)
+          .addParameter("name", name)
+          .addParameter("password", password)
+          .executeAndFetchFirst(Seller.class);
+        return seller;
+      }
+    }
+
 }

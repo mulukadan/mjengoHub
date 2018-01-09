@@ -5,11 +5,11 @@
       <div class="col-md-9">
       <h3>For sellers to post an item, they must login</h3>
 
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+      <button onclick="document.getElementById('id01').style.display='block'" class="btn-primary" style="width:auto;">Login</button>
 
         <div id="id01" class="modal">
 
-          <form class="modal-content animate" action="/action_page.php">
+          <form class="modal-content animate" action="/login" method="post">
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
               <img src="img_avatar2.png" alt="User Login" class="avatar">
@@ -17,10 +17,10 @@
 
             <div class="container">
               <label><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+              <input type="text" placeholder="Enter Username" name="name" id="name" required>
 
               <label><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
               <button type="submit">Login</button>
               <input type="checkbox" checked="checked"> Remember me

@@ -49,9 +49,36 @@ public class App {
       String phone = request.queryParams("phone");
       Seller newSeller = new Seller(name, password, email, phone);
       newSeller.save();
+      model.put("fontColor", "green");
+      model.put("msg", "Seller Added Successfuly!!");
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
+
+      // User login
+      post("/login", (request, response) -> {
+        Map<String, Object> model = new HashMap<String, Object>();
+        String name = request.queryParams("name").toUpperCase();
+        String password = request.queryParams("password");
+        Gen gen = new Gen();
+        int found = Gen.SellerChecker(name,password);
+
+        if(found == 0){
+          //Wrong username & Password
+          model.put("fontColor", "red");
+          model.put("msg", "Wrong Password");
+          model.put("template", "templates/success.vtl");
+        }else{
+          Seller seller = Seller.login(name, password);
+          model.put("fontColor", "green");
+          model.put("seller", seller);
+          model.put("template", "templates/sellerpage.vtl");
+        }
+
+        return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+
 
 
   }

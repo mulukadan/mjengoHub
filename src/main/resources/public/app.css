@@ -193,3 +193,10 @@ span.psw {
        width: 100%;
     }
 }
+
+/*sellerpage*/
+.Sellerdetails{
+  background-color: grey;
+  border: 1px solid powderblue;
+  padding: 30px;
+}
