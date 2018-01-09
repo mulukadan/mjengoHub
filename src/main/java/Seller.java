@@ -58,7 +58,7 @@ public class Seller{
       return seller;
     }
   }
-  public void update(String name, String gender, String contact) {
+  public void update(String name, String password, String email, String phone) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE sellers SET name = :name, password = :password, email = :email , phone = :phone WHERE id = :id";
       con.createQuery(sql)

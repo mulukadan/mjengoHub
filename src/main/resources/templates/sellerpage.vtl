@@ -13,10 +13,10 @@
           <p>Phone No: $seller.getPhone()</p>
           <div class="row">
             <div class="col-sm-6">
-              <button type="button" name="button">Edit</button>
+              <a href="/$seller.getId()/edit"><button type="button" name="button">Edit</button></a>              
             </div>
             <div class="col-sm-6">
-              <button type="button" class="btn btn-danger">Delete Account</button>
+              <button type="button" class="btn-danger">Delete Account</button>
             </div>
           </div>
         </div>
@@ -24,15 +24,16 @@
     </div>
     <!-- Items posted by the seller -->
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-10">
         <h3>Items You Have Posted so far!</h3>
       </div>
-      <div class="col-sm-3">
-        <button type="button" class="btn btn-success">Add New</button>
+      <div class="col-sm-2">
+        <a href="/$seller.getId()/newitem"><button type="button" class="btn-success" style="width:auto;">Add New</button></a>
+
       </div>
     </div>
 
-
+    <!-- All Items Display -->
     <div class="SellerItems">
       #if($seller.getItems().size()>0)
         <div class ="row" >
