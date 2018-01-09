@@ -40,6 +40,19 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    // Saving new Sellers
+    post("/sellers", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("name");
+      String password = request.queryParams("password");
+      String email = request.queryParams("email");
+      String phone = request.queryParams("phone");
+      Seller newSeller = new Seller(name, password, email, phone);
+      newSeller.save();
+      model.put("template", "templates/success.vtl");
+      return new ModelAndView(model, layout);
+      }, new VelocityTemplateEngine());
+
 
   }
 }

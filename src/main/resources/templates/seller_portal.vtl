@@ -12,7 +12,7 @@
           <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <img src="img_avatar2.png" alt="Avatar" class="avatar">
+              <img src="img_avatar2.png" alt="User Login" class="avatar">
             </div>
 
             <div class="container">
@@ -33,9 +33,54 @@
           </form>
         </div>
 
+        <!-- Create New Seller model -->
+        <!-- Create Account -->
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Create Account</button>
+
+        <div id="id02" class="modal">
+          <form class="modal-content animate" action="/sellers" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="img_avatar2.png" alt="New Seller Details" class="avatar">
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label><b>Username:</b></label>
+                  <input type="text" placeholder="Enter Username" id="name" name="name" required>
+                </div>
+                <div class="col-sm-6">
+                  <label><b>Password:</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="pwd">Phone No::</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="pwd">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
+                  </div>
+                </div>
+              </div>
+              <button type="submit">Create</button>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
         <script>
         // Get the modal
         var modal = document.getElementById('id01');
+        var modal = document.getElementById('id02');
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
@@ -44,17 +89,10 @@
             }
         }
         </script>
-
-        <!-- Create Account -->
-        <button onclick="" style="width:auto;">Create Account</button>
-
-
-
       </div>
       <div class="col-md-3" id="main">
         <img src="/images/me.png" alt="Constructors">
       </div>
     </div>
-
-</div>
+  </div>
 </div>

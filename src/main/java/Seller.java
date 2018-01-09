@@ -9,7 +9,7 @@ public class Seller{
   private String phone;
 
 
-  public Seller(String name, String password, String email, String contact){
+  public Seller(String name, String password, String email, String phone){
     this.name = name.toUpperCase();
     this.password = password;
     this.email = email;
