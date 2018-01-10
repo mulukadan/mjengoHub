@@ -191,11 +191,20 @@ public class App {
               post("/items/:id/delete", (request, response) -> {
                 Map<String, Object> model = new HashMap<String, Object>();
                 Item item = Item.find(Integer.parseInt(request.params(":id")));
-
                 item.delete();
                 response.redirect("/seller/"+item.getSeller().getId());
 
                 return new ModelAndView(model, layout);
+                }, new VelocityTemplateEngine());
+
+                // Opening Item View/Order
+                get("/items/:id/view", (request, response) -> {
+                  Map<String, Object> model = new HashMap<String, Object>();
+                  Item item = Item.find(Integer.parseInt(request.params(":id")));
+                  model.put("item", item);
+                  model.put("template", "templates/orderItem.vtl");
+
+                  return new ModelAndView(model, layout);
                 }, new VelocityTemplateEngine());
 
 

@@ -46,9 +46,10 @@
 
     <h2>Here is a List of All Items</h2>
 
-    All Items: $items.size()
     <div class="row">
       #foreach($item in $items)
+      
+      <a href="/items/$item.getId()/view">
         <div class="col-md-3 $item.getName() $item.getLocation()">
           <div class="panel panel-primary">
             <div class="panel-heading">$item.getName()</div>
@@ -58,7 +59,7 @@
                   <figure>
                     <img src="$item.getImg()" alt="No Image" />
                     <figcaption>
-                      <!-- <h2>$item.getName().toUpperCase()</h2> -->
+                      <h3>$item.getName().toUpperCase()</h3>
                       <p>Location: $item.getLocation()</p>
                       <!-- <p>Cell: 0713919051</p> -->
                       <p>Price: $item.getCost()</p>
@@ -69,7 +70,8 @@
             </div>
           </div>
         </div>
-        #end
+       </a>
+      #end
     </div>
     <div class="searchMessage">
       <img src="" alt="" id="loadingImg">

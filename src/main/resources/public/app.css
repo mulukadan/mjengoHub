@@ -24,9 +24,9 @@ h1{
 border-radius: 0px;
 }
 .jumbotron{
-  height: 550px;
+  height: 530px;
   //text-align: center;
-  margin-top: -15px;
+  margin-top: -5px;
   border-radius: 50px;
   background-image: url("/images/bb.jpg");
   background-repeat: no-repeat;
@@ -314,4 +314,19 @@ span.psw {
   color: #a7a5a5;
   display: none;
   text-align: center;
+}
+
+.orderform{
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: 3px;
+}
+.orderPanel{
+  margin-top: -25px;
+}
+body {
+    background-color: #a590a3;
+}
+.container{
+  background-color: white;
 }

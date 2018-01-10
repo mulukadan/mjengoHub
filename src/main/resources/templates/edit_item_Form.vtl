@@ -4,8 +4,7 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <form  action="/uitems" method="post">
-            <!-- <form class="modal-content animate" action="/newitem" method="post" > -->
+          <form action="/uitems" method="post">
             <input type="hidden" name="itemid"  id="itemid" value="$item.getId()">
             <input type="hidden" name="sellerid" id="sellerid" value="$item.getSeller().getId()">
             <div class="form-group">
@@ -32,7 +31,7 @@
         </div>
         <div class="col-md-4">
           <div class="itemimg">
-            <img src="/images/sand.jpg" alt="">
+            <img src="$item.getImg()" alt="No Image">
           </div>
           <form class="" action="/cseller" method="post">
             <input type="hidden" name="sellerid" value="$item.getSeller().getId()">

@@ -62,7 +62,7 @@
             #foreach($item in $seller.getItems())
              <div class ="row" >
               <div class="col-md-2">
-                <li></li>
+                <li><img src="$item.getImg()" width="48" height="48" alt="No Image" /></li>
               </div>
               <div class="col-md-4">
                 $item.getName()
@@ -84,7 +84,7 @@
                   </div>
               </div>
              </div>
-             <hr>
+             <hr size="6" class="blue">
             #end
         </ol>
         #else
