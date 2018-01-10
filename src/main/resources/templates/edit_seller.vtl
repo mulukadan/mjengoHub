@@ -7,24 +7,24 @@
             <div class="row">
               <div class="col-sm-6">
                 <label><b>Username:</b></label>
-                <input type="text" placeholder="$seller.getName()" id="name" name="name" required>
+                <input type="text" value="$seller.getName()" id="name" name="name" required>
               </div>
               <div class="col-sm-6">
                 <label><b>Password:</b></label>
-                <input type="password" placeholder="$seller.getPassword()" name="password" id="password" required>
+                <input type="password" value="$seller.getPassword()" name="password" id="password" required>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="pwd">Phone No::</label>
-                  <input type="tel" class="form-control" placeholder="$seller.getPhone()" name="phone" id="phone" required>
+                  <input type="tel" class="form-control" value="$seller.getPhone()" name="phone" id="phone" required>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="pwd">Email:</label>
-                  <input type="email" class="form-control" placeholder="$seller.getEmail()" name="email" id="email" required>
+                  <input type="email" class="form-control" value="$seller.getEmail()" name="email" id="email" required>
                 </div>
               </div>
             </div>
@@ -32,7 +32,7 @@
             </form>
           <div style="background-color:#f1f1f1">
 
-            <form class="" action="/seller" method="post">
+            <form class="" action="/cseller" method="post">
               <input type="hidden" name="sellerid" value="$seller.getId()">
               <button type="submit" class="cancelbtn">Cancel</button>
             </form>

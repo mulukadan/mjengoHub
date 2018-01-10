@@ -30,6 +30,10 @@ public class Item{
     return cost;
   }
 
+  public String getImg(){
+    return img;
+  }
+
   public Seller getSeller() {
     int id = sellerid;
     Seller seller;
@@ -70,19 +74,19 @@ public class Item{
       return item;
     }
   }
-  public void update(String name, String gender, String contact, int stylist_id) {
+  public void update(String name, String location, String cost, String img) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE items SET name = :name, location = :location, cost = :cost, img = :img, sellerid = :sellerid WHERE id = :id";
+      String sql = "UPDATE items SET name = :name, location = :location, cost = :cost, img = :img WHERE id = :id";
       con.createQuery(sql)
-        .addParameter("name", this.name)
-        .addParameter("location", this.location)
-        .addParameter("cost", this.cost)
-        .addParameter("img", this.img)
-        .addParameter("sellerid", this.sellerid)
+        .addParameter("name",name)
+        .addParameter("location", location)
+        .addParameter("cost", cost)
+        .addParameter("img", img)
         .addParameter("id", id)
         .executeUpdate();
     }
   }
+
   public void delete() {
     try(Connection con = DB.sql2o.open()) {
     String sql = "DELETE FROM items WHERE id = :id;";

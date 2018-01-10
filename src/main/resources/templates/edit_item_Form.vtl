@@ -1,32 +1,33 @@
-<h2><u>New Item Details</u></h2><div class="container">
+<h2><u>Edit Item Details</u></h2><div class="container">
   <div class="panel panel-primary">
     <div class="panel-heading">Item Details</div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-8">
-          <form  action="/newitem" method="post">
+          <form  action="/uitems" method="post">
             <!-- <form class="modal-content animate" action="/newitem" method="post" > -->
-            <input type="hidden" name="sellerid" id="sellerid" value="$seller.getId()">
+            <input type="hidden" name="itemid"  id="itemid" value="$item.getId()">
+            <input type="hidden" name="sellerid" id="sellerid" value="$item.getSeller().getId()">
             <div class="form-group">
               <label for="name">Item Name:</label>
-              <input type="text" id="name" name="name" placeholder="Enter Name" required>
+              <input type="text" id="name" name="name" placeholder="Enter Name" value="$item.getName()" required>
             </div>
 
             <div class="form-group">
               <label for="name">Item Location:</label>
-              <input type="text" id="location"  name="location" placeholder="Enter item Location" required>
+              <input type="text" id="location"  name="location" placeholder="Enter item Location" value="$item.getLocation()" required>
             </div>
 
             <div class="form-group">
               <label for="name">Item Cost:</label>
-              <input type="text" id="cost"  name="cost" placeholder="Ksh. 1000/T" required>
+              <input type="text" id="cost"  name="cost" placeholder="Ksh. 1000/T" value="$item.getCost()" required>
             </div>
             <div class="form-group">
               <label for="exampleFormControlFile1">Item Image:</label>
               <input type="file" class="form-control-file" name="img" id="img">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">UPDATE</button>
           </form>
         </div>
         <div class="col-md-4">
@@ -34,7 +35,7 @@
             <img src="/images/sand.jpg" alt="">
           </div>
           <form class="" action="/cseller" method="post">
-            <input type="hidden" name="sellerid" value="$seller.getId()">
+            <input type="hidden" name="sellerid" value="$item.getSeller().getId()">
             <button type="submit" class="cancelbtn">Cancel</button>
           </form>
         </div>

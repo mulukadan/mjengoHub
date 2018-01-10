@@ -75,7 +75,7 @@ public class Seller{
     String sql = "DELETE FROM sellers WHERE id = :id;";
     con.createQuery(sql).addParameter("id", id).executeUpdate();
     }
-    //Assigning client_id to 0 for Clients allocated to the deleted sTYLIST
+    //deleting items posted by the sellers
     try(Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM items WHERE sellerid = :id;";
       con.createQuery(sql).addParameter("id", id).executeUpdate();

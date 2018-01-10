@@ -13,10 +13,14 @@
           <p>Phone No: $seller.getPhone()</p>
           <div class="row">
             <div class="col-sm-6">
-              <a href="/$seller.getId()/edit"><button type="button" name="button">Edit</button></a>              
+              <a href="/$seller.getId()/edit"><button type="button" name="button">Edit</button></a>
             </div>
             <div class="col-sm-6">
-              <button type="button" class="btn-danger">Delete Account</button>
+              <!-- <a href="/seller/$seller.getId()/delete"><button type="button" class="btn-danger">Delete Account</button></a> -->
+              <!-- /seller/:id/delete -->
+               <form action="/seller/$seller.getId()/delete" method="post">
+                <button type="submit" class="btn-danger">Delete Account</button>
+               </form>
             </div>
           </div>
         </div>
@@ -71,10 +75,10 @@
               </div>
               <div class="col-md-2">
                   <div class="col-md-2">
-                     <a href="/clients/$client.getId()/edit"><img src="/images/e2.png" alt="Edit"></a>
+                     <a href="/items/$item.getId()/edit"><img src="/images/e2.png" alt="Edit"></a>
                   </div>
                   <div class="col-md-2">
-                     <form action="/clients/$client.getId()/delete" method="post">
+                     <form action="/items/$item.getId()/delete" method="post">
                       <input type="image" src="/images/delete.png" alt="Delete">
                      </form>
                   </div>
