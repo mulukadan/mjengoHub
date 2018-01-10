@@ -5,8 +5,17 @@
 
         <div class="row">
           <div class="col-md-6">
-            <h3>$item.getName()</h3>
-            <img src="$item.getImg()" class="img-thumbnail" alt="No Image" />
+            <div class="fontl blue">$item.getName()</div>
+            <div class="row">
+              <div class="col-sm-7">
+                <img src="$item.getImg()" class="img-thumbnail" alt="No Image" />
+              </div>
+              <div class="col-sm-5">
+                <img src="/images/order.png" alt="No Image" />
+              </div>
+            </div>
+
+
             <div class="row">
               <div class="col-md-6">
                 <p><b>Cost: </b>$item.getCost()</p>
@@ -22,7 +31,7 @@
             <a href="/items"><button type="button" name="button">Back</button></a>
           </div>
           <div class="col-md-6 orderform">
-              <p>You can make an Order by filling the form!</p>
+              <div class="fontl green">Make an Order!</div>
             <form  action="/#" method="post">
               <input type="hidden" name="itemid" id="itemid" value="$item.getId()">
               <div class="row">

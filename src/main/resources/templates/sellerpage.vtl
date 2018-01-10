@@ -1,40 +1,41 @@
 
   <div class="container">
     <h2>Hello, $seller.getName() !!</h2>
-    <h1 class="blue">Welcome to your profile Page</h1>
-    <div class="Sellerdetails">
+    <div class="blue fontm">Welcome to your profile Page</div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Your Details</div>
+      <div class="panel-body">
+
+
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <p>User ID: $seller.getId()</p>
           <p>User Name: $seller.getName()</p>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <p>Email address: $seller.getEmail()</p>
           <p>Phone No: $seller.getPhone()</p>
-          <div class="row">
-            <div class="col-sm-6">
-              <a href="/$seller.getId()/edit"><button type="button" name="button">Edit</button></a>
-            </div>
-            <div class="col-sm-6">
-              <!-- <a href="/seller/$seller.getId()/delete"><button type="button" class="btn-danger">Delete Account</button></a> -->
-              <!-- /seller/:id/delete -->
-               <form action="/seller/$seller.getId()/delete" method="post">
-                <button type="submit" class="btn-danger">Delete Account</button>
-               </form>
-            </div>
-          </div>
+
         </div>
+        <div class="col-sm-4">
+          <a href="/$seller.getId()/edit"><button type="button" class="form-control btn-primary" name="button">Edit</button></a>
+          <form action="/seller/$seller.getId()/delete" method="post">
+           <button type="submit" class="form-control btn-danger" >Delete Account</button>
+          </form>
+        </div>
+       </div>
       </div>
     </div>
     <!-- Items posted by the seller -->
     <div class="row">
       <div class="col-sm-10">
-        <h3>Items You Have Posted so far!</h3>
+        <div class="fontl green">Items You Have Posted so far!</div>
       </div>
       <div class="col-sm-2">
-        <a href="/$seller.getId()/newitem"><button type="button" class="btn-success" style="width:auto;">Add New</button></a>
+        <a href="/$seller.getId()/newitem"><button type="button" class="form-control btn-success" style="width:auto;">Add New</button></a>
 
       </div>
+      <hr>
     </div>
 
     <!-- All Items Display -->

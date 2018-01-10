@@ -47,6 +47,25 @@ h2{
   /*font-family: 'Fredericka the Great', cursive;*/
   font-family: 'Bungee Inline', cursive;
 }
+.fontn{
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 20px;
+  /*font-family: 'Bungee Inline', cursive;*/
+}
+.fontm{
+        font-family: 'Tangerine', serif;
+        font-size: 58px;
+        text-shadow: 4px 4px 4px #aaa;
+        text-align: center;
+      }
+.fontl{
+        font-family: 'Arvo';font-size: 22px;
+        font-size: 28px;
+        text-shadow: 4px 4px 4px #aaa;
+        text-align: center;
+      }
+
 #main{
     border-style: solid;
     border-color: gray;
@@ -219,6 +238,7 @@ span.psw {
 .thumbnail img {
   transition: all 0.3s ease 0s;
   width: 100%;
+
 }
 .thumbnail{
   overflow: hidden;
@@ -322,7 +342,7 @@ span.psw {
   border-radius: 3px;
 }
 .orderPanel{
-  margin-top: -25px;
+  margin-top: -5px;
 }
 body {
     background-color: #a590a3;
