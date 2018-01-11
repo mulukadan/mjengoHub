@@ -229,7 +229,7 @@ public class App {
                   String SenderPwd = "moringaschool";
 
                   String[] SellerEmail = {item.getSeller().getEmail()};// the receiver of this mail
-                  String ComposedMsg = "Buyer: " + buyer +"\nContact> Phone: "+ phone + " Email:" + email +"\nMessage: "+ comment;
+                  String ComposedMsg = "Buyer: " + buyer +"\nContact> Phone: "+ phone + " Email: " + email +"\nMessage: "+ comment;
                   String msg = "";
                    if(EmailSender.sendMail(SenderMail,SenderPwd, item.getName(), ComposedMsg,SellerEmail)){
                      msg = item.getName() +" Ordered Successfuly!!";
