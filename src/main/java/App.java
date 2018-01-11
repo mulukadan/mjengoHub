@@ -29,6 +29,8 @@ public class App {
     get("/items", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("items", Item.all());
+      model.put("allitemsnames", Item.allItems());
+      model.put("alllocations", Item.allLocations());
       model.put("template", "templates/items.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -51,6 +53,8 @@ public class App {
       newSeller.save();
       model.put("fontColor", "green");
       model.put("msg", "Seller Added Successfuly!!");
+      model.put("link", "/login");
+      model.put("linkto", "Back to Login");
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
@@ -83,6 +87,8 @@ public class App {
           //Wrong username & Password
           model.put("fontColor", "red");
           model.put("msg", "Wrong Password");
+          model.put("link", "/login");
+          model.put("linkto", "Back to Login Page");
           model.put("template", "templates/success.vtl");
         }else{
           Seller seller = Seller.login(name, password);
@@ -114,8 +120,8 @@ public class App {
         // Saving new Item
         post("/newitem", (request, response) -> {
           Map<String, Object> model = new HashMap<String, Object>();
-          String name = request.queryParams("name");
-          String location = request.queryParams("location");
+          String name = request.queryParams("name").toUpperCase();
+          String location = request.queryParams("location").toUpperCase();
           String cost = request.queryParams("cost");
           String image = "/images/"+request.queryParams("img");
           // String image = "images/sand4.jpg";
@@ -132,8 +138,8 @@ public class App {
           post("/uitems", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             int itemid = Integer.parseInt(request.queryParams("itemid"));
-            String name = request.queryParams("name");
-            String location = request.queryParams("location");
+            String name = request.queryParams("name").toUpperCase();
+            String location = request.queryParams("location").toUpperCase();
             String cost = request.queryParams("cost");
             String image = "/images/"+request.queryParams("img");
             int sellerId = Integer.parseInt(request.queryParams("sellerid"));
@@ -173,6 +179,8 @@ public class App {
               // response.redirect("/login");
               model.put("fontColor", "white");
               model.put("msg", "Account Deleted Successfuly!!");
+              model.put("link", "/login");
+              model.put("linkto", "Back to Login Page");
               model.put("template", "templates/success.vtl");
               return new ModelAndView(model, layout);
               }, new VelocityTemplateEngine());
@@ -207,7 +215,36 @@ public class App {
                   return new ModelAndView(model, layout);
                 }, new VelocityTemplateEngine());
 
+                // Saving new Seller
+                post("/sendmail", (request, response) -> {
+                  Map<String, Object> model = new HashMap<String, Object>();
+                  int itemid = Integer.parseInt(request.queryParams("itemid"));
+                  Item item = Item.find(itemid);
+                  String buyer = request.queryParams("name");
+                  String phone = request.queryParams("phone");
+                  String email = request.queryParams("email");
+                  String comment = request.queryParams("comment");
 
+                  String SenderMail = "mjengohubkenya@gmail.com";// the Sender of this mail
+                  String SenderPwd = "moringaschool";
+
+                  String[] SellerEmail = {item.getSeller().getEmail()};// the receiver of this mail
+                  String ComposedMsg = "Buyer: " + buyer +"\nContact> Phone: "+ phone + " Email:" + email +"\nMessage: "+ comment;
+                  String msg = "";
+                   if(EmailSender.sendMail(SenderMail,SenderPwd, item.getName(), ComposedMsg,SellerEmail)){
+                     msg = item.getName() +" Ordered Successfuly!!";
+                   }
+                   else{
+                     msg = "Some error occured, please try again later";
+                   }
+
+                  model.put("fontColor", "green");
+                  model.put("msg", msg);
+                  model.put("link", "/items");
+                  model.put("linkto", "Back to Items");
+                  model.put("template", "templates/success.vtl");
+                  return new ModelAndView(model, layout);
+                  }, new VelocityTemplateEngine());
 
   }
 }

@@ -52,6 +52,18 @@ public class Item{
         return con.createQuery(sql).executeAndFetch(Item.class);
       }
   }
+  public static List<String> allLocations() {
+      String sql = "SELECT DISTINCT(location) AS locations FROM items ORDER BY locations";
+      try(Connection con = DB.sql2o.open()) {
+         return con.createQuery(sql).executeScalarList(String.class);
+      }
+  }
+  public static List<String> allItems() {
+      String sql = "SELECT DISTINCT(name) AS items FROM items ORDER BY items";
+      try(Connection con = DB.sql2o.open()) {
+        return con.createQuery(sql).executeScalarList(String.class);
+      }
+  }
   public void save() {
    try(Connection con = DB.sql2o.open()) {
      String sql = "INSERT INTO items(name, location, cost, img, sellerid) VALUES (:name, :location, :cost, :img, :sellerid)";

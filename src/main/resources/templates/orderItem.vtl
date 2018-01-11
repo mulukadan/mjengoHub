@@ -32,7 +32,7 @@
           </div>
           <div class="col-md-6 orderform">
               <div class="fontl green">Make an Order!</div>
-            <form  action="/#" method="post">
+            <form  action="/sendmail" method="post">
               <input type="hidden" name="itemid" id="itemid" value="$item.getId()">
               <div class="row">
                 <div class="col-md-6">
@@ -54,7 +54,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleFormControlFile1">Message:</label>
-                <textarea class="form-control" rows="3" id="comment"></textarea>
+                <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
