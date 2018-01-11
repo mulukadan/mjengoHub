@@ -43,5 +43,7 @@ open http://localhost:4567
 ## License
 *OPen source*
 
-##           Copyright  (c) 2018
-        **_Mulu Kadan & Joseph Chege_**
+## Copyright  (c) 2018
+        
+_Mulu Kadan & Joseph Chege_
+        
