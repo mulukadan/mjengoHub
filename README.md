@@ -1,8 +1,7 @@
 # MjengoHub
 
-#### By 
-_Mulu Kadan_
-_Joseph Chege_
+## By 
+_Mulu Kadan_ & _Joseph Chege_
 
 ## Description
 A web application that allows Sellers to post building Materials such as sand ballast cement and other building materials for buyers to view and oder them.
@@ -18,7 +17,7 @@ A web application that allows Sellers to post building Materials such as sand ba
 - delete his/her account.
 - delete an Item if its no longer exist.
 
-- **_A Buy Can can:_**
+- **_A Buyer Can can:_**
 - see a list of all Items.
 - select a an item, see their details, and see a list of all       items that belong to different sellers.
 - Order and send an eamil to a specific seller.
@@ -28,7 +27,7 @@ A web application that allows Sellers to post building Materials such as sand ba
 
 Open terminal and type the following commands:
 ```
-$ git clone https://github.com/d-kahara/salon
+$ git clone https://github.com/mulukadan/mjengoHub.git
 $ cd salon
 $ gradle run
 open http://localhost:4567
@@ -41,7 +40,8 @@ open http://localhost:4567
 4. gradle
 5. postgresql
 
-### License
+## License
 *OPen source*
 
-#           Copyright **_Mulu Kadan Joseph Chege_** (c) 2017 
+##           Copyright  (c) 2018
+        **_Mulu Kadan & Joseph Chege_**
