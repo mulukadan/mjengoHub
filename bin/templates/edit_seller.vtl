@@ -1,0 +1,44 @@
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">Edit Details</div>
+  <div class="panel-body">
+      <form class="modal-content animate fpadding" action="/seller" method="post">
+        <input type="hidden" name="sellerid" value="$seller.getId()">
+            <div class="row">
+              <div class="col-sm-6">
+                <label><b>Username:</b></label>
+                <input type="text" value="$seller.getName()" id="name" name="name" required>
+              </div>
+              <div class="col-sm-6">
+                <label><b>Password:</b></label>
+                <input type="password" value="$seller.getPassword()" name="password" id="password" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="pwd">Phone No::</label>
+                  <input type="tel" class="form-control" value="$seller.getPhone()" name="phone" id="phone" required>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="pwd">Email:</label>
+                  <input type="email" class="form-control" value="$seller.getEmail()" name="email" id="email" required>
+                </div>
+              </div>
+            </div>
+            <button type="submit">Update</button>
+            </form>
+          <div style="background-color:#f1f1f1">
+
+            <form class="" action="/cseller" method="post">
+              <input type="hidden" name="sellerid" value="$seller.getId()">
+              <button type="submit" class="cancelbtn">Cancel</button>
+            </form>
+
+          </div>
+
+      </div>
+  </div>
+</div>
