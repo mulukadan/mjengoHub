@@ -27,16 +27,23 @@ h1{
 .navbar{
 border-radius: 0px;
 }
-.jumbotron{
+.navbar-inverse .navbar-brand {
+    color: #f00;
+}
+.jumbotron {
   height: 530px;
   //text-align: center;
   margin-top: -5px;
   border-radius: 50px;
-  background-image: url("/images/bb.jpg");
+  background-image: url("/images/bk.jpg");
   background-repeat: no-repeat;
   /*background-size: cover;*/
   background-size: 100% auto;
   padding-top: 80px;
+}
+.opacity{
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 .jumbotron h1{
   margin-top: 0px;
